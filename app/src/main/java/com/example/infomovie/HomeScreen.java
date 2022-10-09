@@ -9,19 +9,13 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
+import com.example.infomovie.fragments.NowPlaying;
+import com.example.infomovie.fragments.PopularMovie;
+import com.example.infomovie.fragments.UpcomingMovies;
+
 public class HomeScreen extends FragmentActivity {
-    /**
-     * The number of pages (wizard steps) to show in this demo.
-     */
     private static final int NUM_PAGES = 3;
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-    private ViewPager2 viewPager;
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
+        private ViewPager2 viewPager;
     private FragmentStateAdapter pagerAdapter;
 
     @Override
@@ -38,11 +32,6 @@ public class HomeScreen extends FragmentActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         public ScreenSlidePagerAdapter(FragmentActivity fa) {
             super(fa);

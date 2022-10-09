@@ -1,4 +1,4 @@
-package io.quicktype;
+package com.example.infomovie.model;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -8,7 +8,6 @@ public class Result {
     private String backdropPath;
     private List<Long> genreIds;
     private long id;
-    private OriginalLanguage originalLanguage;
     private String originalTitle;
     private String overview;
     private double popularity;
@@ -31,10 +30,7 @@ public class Result {
     public long getId() { return id; }
     public void setId(long value) { this.id = value; }
 
-    public OriginalLanguage getOriginalLanguage() { return originalLanguage; }
-    public void setOriginalLanguage(OriginalLanguage value) { this.originalLanguage = value; }
-
-    public String getOriginalTitle() { return originalTitle; }
+       public String getOriginalTitle() { return originalTitle; }
     public void setOriginalTitle(String value) { this.originalTitle = value; }
 
     public String getOverview() { return overview; }
