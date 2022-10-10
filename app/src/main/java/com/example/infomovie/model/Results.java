@@ -3,7 +3,7 @@ package com.example.infomovie.model;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Result {
+public class Results {
     private boolean adult;
     private String backdropPath;
     private List<Long> genreIds;

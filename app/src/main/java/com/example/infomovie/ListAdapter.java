@@ -62,7 +62,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     .load(item.getPosterPath())
                     .into(image);
             titleMovie.setText(item.getTitle());
-            popularity.setText(String.valueOf(item.getPopularity()));
+            popularity.setText(String.valueOf(item.getVoteAverage()));
             releaseDate.setText(String.valueOf(item.getReleaseDate()));
 
 
