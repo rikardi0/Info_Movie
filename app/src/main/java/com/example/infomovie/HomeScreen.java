@@ -1,21 +1,22 @@
 package com.example.infomovie;
 
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
-
-
 import android.os.Bundle;
 
 import com.example.infomovie.fragments.NowPlaying;
 import com.example.infomovie.fragments.PopularMovie;
 import com.example.infomovie.fragments.UpcomingMovies;
 
-public class HomeScreen extends FragmentActivity {
+import org.jetbrains.annotations.NotNull;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
+
+public class HomeScreen extends FragmentActivity  {
     private static final int NUM_PAGES = 3;
-        private ViewPager2 viewPager;
+    private ViewPager2 viewPager;
     private FragmentStateAdapter pagerAdapter;
 
     @Override
@@ -33,11 +34,15 @@ public class HomeScreen extends FragmentActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
+
+
+
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         public ScreenSlidePagerAdapter(FragmentActivity fa) {
             super(fa);
         }
 
+        @NotNull
         @Override
         public Fragment createFragment(int position) {
             switch (position) {
@@ -55,4 +60,6 @@ public class HomeScreen extends FragmentActivity {
             return NUM_PAGES;
         }
     }
+
+
 }

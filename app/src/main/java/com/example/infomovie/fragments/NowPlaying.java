@@ -1,21 +1,19 @@
 package com.example.infomovie.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.infomovie.R;
+import com.example.infomovie.adapter.ListAdapter;
+import com.example.infomovie.model.ListElement;
+
+import java.util.ArrayList;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-
-import com.example.infomovie.ListAdapter;
-import com.example.infomovie.R;
-import com.example.infomovie.model.ListElement;
-
-import java.util.ArrayList;
 
 
 public class NowPlaying extends Fragment {
@@ -70,78 +68,146 @@ public class NowPlaying extends Fragment {
     public void init() {
         listMovie = new ArrayList<>();
         String[] titles = {
+                "Orphan: First Kill",
                 "Fall",
                 "Bullet Train",
-                "La Máquina infernal",
-                "Atenea",
-                "La Bestia",
-                "After. Amor infinito",
+                "Athena",
+                "The Infernal Machine",
+                "Beast",
+                "After Ever Happy",
+                "Bullet Proof",
                 "Smile",
-                "Persecución mortal",
-                "Liga de supermascotas",
+                "The Greatest Beer Run Ever",
+                "DC League of Super-Pets",
+                "Top Gun: Maverick",
                 "Dragon Ball Super: Super Hero",
-                "La pasajera",
+                "Stowaway",
+                "Wire Room",
+                "Avatar",
+                "The Black Phone",
+                "Spider-Man: No Way Home",
+                "Jeepers Creepers: Reborn",
+                "Morbius",
 
         };
         Double[] rating = {
 
+                6.9,
                 7.4,
                 7.5,
-                6.8,
                 6.6,
+                6.9,
                 7.1,
                 6.9,
+                5.1,
                 6.9,
-                4.8,
+                7.8,
                 7.5,
+                8.4,
                 8.0,
                 5.0,
+                6.8,
+                7.5,
+                7.9,
+                8.0,
+                5.8,
+                6.4,
         };
         String[] releaseDate = {
+                "2022-07-27",
                 "2022-08-11",
                 "2022-07-03",
-                "2022-09-23",
                 "2022-09-09",
+                "2022-09-23",
                 "2022-08-11",
                 "2022-08-24",
-                "2022-09-23",
                 "2022-08-19",
+                "2022-09-23",
+                "2022-09-30",
                 "2022-07-27",
+                "2022-05-24",
                 "2022-06-11",
                 "2022-08-31",
+                "2022-09-02",
+                "2009-12-15",
+                "2022-06-22",
+                "2021-12-15",
+                "2022-09-15",
+                "2022-03-30",
         };
         String[] imagePath = {
-
-                "/tsjVxiuGyvMC4IbI2gjmDYpcYjU.jpg",
-                "/ybSIUt48PsM08F4UZwHdjL9ZVG2.jpg",
-                "/7VuQopunJnHKI1xejbdRUyDbP0S.jpg",
-                "/uponqptyKtBsJuODqmxoronFd8P.jpg",
-                "/lGIkv9fQ3i7yVcJXDvG0Vry00LI.jpg",
+                "/pHkKbIRoCe7zIFvqan9LFSaQAde.jpg",
+                "/spCAxD99U1A6jsiePFoqdEcY0dG.jpg",
+                "/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg",
+                "/fenNPxVF5ERy0CSyVruuEg959Hg.jpg",
+                "/bSqpOGzaKBdGkBLmcm1JJIVryYy.jpg",
+                "/xIGr7UHsKf0URWmyyd5qFMAq4d8.jpg",
                 "/6b7swg6DLqXCO3XUsMnv6RwDMW2.jpg",
-                "/qJO54b6LsBmEkMxdW8ZziL9Mnam.jpg",
-                "/iRbaEeasR06mftDlA0cOy6NAvuk.jpg",
-                "/lDtANZzTD80bVi1DTRKRVDrurhJ.jpg",
-                "/uohymzBVaIYjbnoQstbnlia6ZPJ.jpg",
-                "/3Oi2xIzQ8c4AYJah229zAMqSfQp.jpg",
+                "/cj6YmTAU7Jvn3w6d2NfjQzpX7Pw.jpg",
+                "/aPqcQwu4VGEewPhagWNncDbJ9Xp.jpg",
+                "/ggf37TpcKaxwguhvtNn6MQpyqBn.jpg",
+                "/r7XifzvtezNt31ypvsmb6Oqxw49.jpg",
+                "/62HCnUTziyWcpDaBO2i1DX17ljH.jpg",
+                "/rugyJdeoJm7cSJL1q4jBpTNbxyU.jpg",
+                "/1RmugOkBFU5eXu1dbr1zdxChLfQ.jpg",
+                "/b9ykj4v8ykjRoGB7SpI1OuxblNU.jpg",
+                "/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg",
+                "/lr11mCT85T1JanlgjMuhs9nMht4.jpg",
+                "/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg",
+                "/aGBuiirBIQ7o64FmJxO53eYDuro.jpg",
+                "/6JjfSchsU6daXk2AKX8EEBjO3Fm.jpg",
         };
 
         String[] overView = {
-
-                "Para las mejores amigas Becky y Hunter, la vida trata de superar tus miedos y empujar tus límites. Sin embargo, después de subir hasta la cima de una torre de comunicaciones abandonada, se encuentran atrapadas y sin forma de bajar. A 600 metros del suelo y totalmente alejadas de la civilización, las chicas pondrán a prueba sus habilidades de escaladoras expertas y lucharán desesperadamente por sobrevivir aunque lo tengan todo en contra. ¿Lo conseguirán?",
-                "Cinco asesinos a sueldo se encuentran a bordo de un tren bala que viaja de Tokio a Morioka con unas pocas paradas intermedias. Descubren que sus misiones no son ajenas entre sí. La pregunta es quién saldrá vivo del tren y qué les espera en la estación final.",
-                "Bruce Cogburn, un autor controversial y solitario, sale de su escondite al recibir numerosas cartas de un fanático obsesivo. Se trata tan solo del comienzo de un espiral de peligro y misterio.",
-                "Horas después de la trágica muerte de su hermano menor en circunstancias inexplicables, la vida de tres hermanos se ve sumida en el caos.",
-                "El Doctor Nate Samuels, que se ha quedado viudo recientemente, regresa a Sudáfrica, lugar en el que conoció a su mujer, para visitar una reserva de animales con sus hijas. Pero lo que empieza siendo un viaje curativo se convierte en una lucha por la supervivencia cuando un león que ha escapado de unos cazadores furtivos empieza a seguirles.",
-                "El amor de Tessa y Hardin nunca ha sido fácil. Mientras él permanece en Londres después de la boda de su madre y se hunde cada vez más en su propia oscuridad, ella regresa a Seattle. Tessa es la única capaz de entenderle y calmarle... él la necesita, pero ella ya no es la chica buena y dulce que era cuando llegó a la universidad. Deberá plantearse si lo que debe hacer ahora es salvar a Hardin y su relación con él, o si ha llegado el momento de pensar solo en ella. Si quieren que su amor sobreviva, primero tendrán que trabajar en sí mismos. ¿Pero será su destino seguir estando juntos?",
-                "Tras presenciar un extraño y traumático incidente con un paciente, la doctora Rose Cotter (Sosie Bacon) comienza a experimentar sucesos aterradores que no puede explicar. A medida que un miedo sobrecogedor comienza a afectar a todos los aspectos de su vida, Rose se verá obligada a afrontar a su problemático pasado para sobrevivir y escapar de su terrorífica nueva realidad.",
-                "El ladrón lleva a cabo el robo de su vida cuando roba al psicótico señor de la droga, Temple. El plan se lleva a cabo sin problemas hasta que el ladrón descubre un polizón en su coche de huida: la esposa embarazada de Temple, Mia. Con Temple y su mejor asesino, el francés, en plena persecución, el ladrón se debate entre emprender una rápida huida o dar un arriesgado rodeo para ayudar a Mia a escapar de las garras de su marido. En cualquier caso, su única posibilidad de escapar con vida es conducir.",
-                "Krypto el Superperro y Superman son amigos inseparables que comparten los mismos superpoderes y luchan juntos contra el crimen en Metrópolis. Cuando Superman y el resto de la Liga de la Justicia son secuestrados, Krypto debe convencer a un variopinto grupo de un albergue –Ace el sabueso, PB la cerdita barrigona, Merton la tortuga y Chip la ardilla– de dominar sus nuevos poderes y ayudarlo a rescatar a los superhéroes.",
-                "Son Goku destruyó en su momento al Ejército Red Ribbon. Ahora, ciertos individuos han decidido continuar con su legado y han creado a los androides definitivos: Gamma 1 y Gamma 2. Estos dos androides se autoproclaman \"superhéroes\" y deciden atacar a Piccolo y a Gohan. ¿Cuál es el objetivo del Nuevo Ejército Red Ribbon?  Ante un peligro inminente, ¡llega el momento del despertar del Superhéroe!",
-                "Tres ladrones se hacen con el yate de lujo de una mujer fiestera, quién lucha por sobrevivir después de los hechos.",
+                "After escaping from an Estonian psychiatric facility, Leena Klammer travels to America by impersonating Esther, the missing daughter of a wealthy family. But when her mask starts to slip, she is put against a mother who will protect her family from the murderous “child” at any cost.",
+                "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
+                "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+                "Hours after the tragic death of their youngest brother in unexplained circumstances, three siblings have their lives thrown into chaos.",
+                "Reclusive and controversial author Bruce Cogburn is drawn out of hiding by an obsessive fan, forcing the novelist to confront a past that he thought he could escape, and to account for events set in motion by his bestseller decades earlier. Cogburn's search for who is behind the manipulation and mental torment he encounters leads to an emotional roller-coaster ride full of fear and danger, where things are not always as clear as they seem to be, and where past deeds can have dire consequences.",
+                "A recently widowed man and his two teenage daughters travel to a game reserve in South Africa. However, their journey of healing soon turns into a fight for survival when a bloodthirsty lion starts to stalk them.",
+                "As a shocking truth about a couple's families emerges, the two lovers discover they are not so different from each other. Tessa is no longer the sweet, simple, good girl she was when she met Hardin — any more than he is the cruel, moody boy she fell so hard for.",
+                "The Thief  pulls off the robbery of a lifetime when he robs the psychotic drug lord, Temple. The plan goes off without a hitch until the Thief discovers a stowaway in his getaway car - Temple's pregnant wife, Mia.",
+                "After witnessing a bizarre, traumatic incident involving a patient, Dr. Rose Cotter starts experiencing frightening occurrences that she can't explain. As an overwhelming terror begins taking over her life, Rose must confront her troubling past in order to survive and escape her horrifying new reality.",
+                "Chickie wants to support his friends fighting in Vietnam, so he does something wild—personally bring them American beer. What starts as a well-meaning journey quickly changes Chickie’s life and perspective. Based on a true story.",
+                "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
+                "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+                "The Red Ribbon Army, an evil organization that was once destroyed by Goku in the past, has been reformed by a group of people who have created new and mightier Androids, Gamma 1 and Gamma 2, and seek vengeance against Goku and his family.",
+                "A tenacious party girl fights to survive after three thieves commandeer her luxury yacht. Unable to escape and trapped on the yacht at high seas, the prey becomes the hunter as she turns the tables on the intruders and takes matters into her own hands.",
+                "New recruit Justin Rosa must monitor arms-smuggling cartel member Eddie Flynn — and keep him alive at all costs. When a SWAT team descends on Flynn’s home, Rosa breaks protocol and contacts the gangster directly to save his life. As gunmen break into the Wire Room and chaos erupts, Mueller and Rosa make a final, desperate stand against the corrupt agents and officials who seek to destroy evidence and kill them both.",
+                "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+                "Finney Blake, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
+                "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+                "Forced to travel with her boyfriend to a horror festival, Laine begins to experience disturbing visions associated with the urban legend of The Creeper. As the festival arrives and the blood-soaked entertainment builds to a frenzy, she becomes the center of it while something unearthly has been summoned.",
+                "Dangerously ill with a rare blood disorder, and determined to save others suffering his same fate, Dr. Michael Morbius attempts a desperate gamble. What at first appears to be a radical success soon reveals itself to be a remedy potentially worse than the disease.",
         };
+        String[] backDrop = {
+                "/5GA3vV1aWWHTSDO5eno8V5zDo8r.jpg",
+                "/hT3OqvzMqCQuJsUjZnQwA5NuxgK.jpg",
+                "/83oeqwN64WtafGoITvsOzjKIQaM.jpg",
+                "/ghsPsvM0sEztdNT4kUlTsBF2LEF.jpg",
+                "/7AiIrnDMaOhPrw9elJ5NNjijTW4.jpg",
+                "/2k9tBql5GYH328Krj66tDT9LtFZ.jpg",
+                "/rwgmDkIEv8VjAsWx25ottJrFvpO.jpg",
+                "/5EzpTMkpg3DecNoP2DAOBlh0Fi6.jpg",
+                "/olPXihyFeeNvnaD6IOBltgIV1FU.jpg",
+                "/z8KsgBFtduX5bS1yVkjoGo4L7KJ.jpg",
+                "/qaTzVAW1u16WFNsepjCrilBuInc.jpg",
+                "/odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg",
+                "/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
+                "/tviTAFuCFRLElylvBAMPjdRnCDZ.jpg",
+                "/6AxdvA5hiBGF5ajSKsyt0q7rHei.jpg",
+                "/7ABsaBkO1jA2psC8Hy4IDhkID4h.jpg",
+                "/AfvIjhDu9p64jKcmohS4hsPG95Q.jpg",
+                "/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg",
+                "/tIX6j3NzadlwGcJ52nuWdmtOQkg.jpg",
+                "/jzWT0zd8U77fqWg5WgUfYaMzSFz.jpg",
+
+        };
+        String path = "https://image.tmdb.org/t/p/original/";
         for (int i = 0; i < titles.length; i++) {
-            listMovie.add(new ListElement(titles[i], rating[i], releaseDate[i], "https://image.tmdb.org/t/p/original/" + imagePath[i]));
+            listMovie.add(new ListElement(titles[i], rating[i], releaseDate[i], path + imagePath[i], overView[i], path + backDrop[i]));
         }
 
     }
 }
+

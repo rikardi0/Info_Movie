@@ -10,5 +10,7 @@
     <string name="welcome_text">Bienvenido!</string>
     <string name="now_playing">En Cartelera</string>
     <string name="popular">Popular</string>
+    <string name="fecha_de_estreno">Fecha de estreno:</string>
+    <string name="rating">Rating:</string>
 
 </resources>

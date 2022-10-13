@@ -1,21 +1,20 @@
 package com.example.infomovie.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.infomovie.ListAdapter;
 import com.example.infomovie.R;
+import com.example.infomovie.adapter.ListAdapter;
 import com.example.infomovie.model.ListElement;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 public class UpcomingMovies extends Fragment {
@@ -72,110 +71,143 @@ public class UpcomingMovies extends Fragment {
 
     public void init() {
         listUpcoming = new ArrayList<>();
-        String[] titles = {"Jeepers Creepers: Reborn",
+        String[] titles = {"Fall",
+                "Jeepers Creepers: Reborn",
                 "X",
                 "Black Adam",
-                "En Lo Profundo",
+                "Paws of Fury: The Legend of Hank",
+                "Halloween Ends",
                 "Tenor",
-                "Halloween: El final",
-                "Tadeo Jones 3: La tabla esmeralda",
-                "ONE PIECE FILM RED",
-                "Un héroe samurai: La leyenda de Hank",
-                "Declaración de emergencia",
-                "Hombres al borde de un ataque de nervios",
-                "Esperando a Mister Bojangles",
-                "No te preocupes querida",
-                "La Mujer Rey",
-                "Hopper, el polloliebre",
-                "Buena suerte, Leo Grande",
-                "Todo a la vez en todas partes",
+                "Into the Deep",
+                "One Piece Film Red",
+                "Tad the Lost Explorer and the Curse of the Mummy",
+                "Good Luck to You, Leo Grande",
+                "Emergency Declaration",
+                "Men on the Verge of a Nervous Breakdown",
+                "Waiting for Bojangles",
+                "The Woman King",
+                "Chickenhare and the Hamster of Darkness",
+                "Don't Worry Darling",
                 "Barbarian",
-                "Viaje al paraiso",
+                "Everything Everywhere All at Once",
+                "Superwho?",
+
         };
         Double[] rating = {
+                7.4,
                 5.8,
                 6.8,
-                0.0,
+                0.,
                 6.7,
+                7.7,
                 7.1,
-                7.3,
-                7.1,
-                7.5,
-                6.7,
+                6.9,
+                7.4,
+                7.2,
+                7.0,
                 6.9,
                 5.6,
                 7.6,
-                6.8,
                 7.1,
                 7.4,
-                7.0,
-                8.2,
+                6.8,
                 7.2,
-                6.7,
+                8.2,
+                6.1,
+
         };
-        String[] releaseDate = {"2022-09-15",
+        String[] releaseDate = {"2022-08-11",
+                "2022-09-15",
                 "2022-03-17",
                 "2022-10-19",
-                "2022-08-26",
-                "2022-05-04",
-                "2022-10-12",
-                "2022-08-24",
-                "2022-08-06",
                 "2022-07-14",
+                "2022-10-12",
+                "2022-05-04",
+                "2022-08-26",
+                "2022-08-06",
+                "2022-08-24",
+                "2022-06-17",
                 "2022-08-03",
                 "2022-02-10",
                 "2022-01-05",
-                "2022-09-21",
                 "2022-09-15",
                 "2022-02-16",
-                "2022-06-17",
+                "2022-09-21",
+                "2022-09-08",
                 "2022-03-24",
-                "2022-09-08",
-                "2022-09-08",
+                "2022-02-02",
+
         };
         String[] imagePath = {
+                "/spCAxD99U1A6jsiePFoqdEcY0dG.jpg",
                 "/aGBuiirBIQ7o64FmJxO53eYDuro.jpg",
-                "/4pCSBPHUPia93rppHF3UX4cLQ9M.jpg",
-                "/mPTzXksC8HcAj6EM6WjZFJVJEzF.jpg",
-                "/wvIPVmGIJ8RqPS6NVbEeYX9K0gf.jpg",
-                "/oKy8d4CMqD5bZhZs6b775PcxpC3.jpg",
-                "/tQstTS2Q3ZaeWu3fsGDDIr0EBnW.jpg",
-                "/nqj1AVa6Le76wvjRYqn5T4XiDYI.jpg",
-                "/wwwBQK45qSedBdgQGuJXdwJOQE2.jpg",
-                "/dcccakIsT9rBE3EH1f38JMqtgYw.jpg",
-                "/uqd0w7sevlyBgcIAX1qg8LjsHFM.jpg",
-                "/aIeYmoVssfMkcJxnWwUJGSKtm1D.jpg",
-                "/l4giD7V9Nj62Y5JN8I5ZuaNbPQD.jpg",
-                "/z9ZulBDrSBeQN8cagY73lIzr2uh.jpg",
-                "/g7H3cg6aM11JOdlOLqaUp4BmMvM.jpg",
-                "/cg7E2WGLEXB7n45jmW5daQl51VH.jpg",
-                "/m84Qa4lsS3Hf1I8OR4WBs8N5pT1.jpg",
-                "/ildVXPXTQFly8VAgIrre5v5rbbQ.jpg",
-                "/mMB9M9HsBB4XAep9rTvKyDETVxm.jpg",
-                "/c1zit9bUtEe6yjcIEtdVQ9mJpp8.jpg",
+                "/woTQx9Q4b8aO13jR9dsj8C9JESy.jpg",
+                "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg",
+                "/vccE9bBa9mgghFpkWzU1fQqmOKB.jpg",
+                "/3aEJDJ9O8lsRMM9Xaxxm5kNyt0N.jpg",
+                "/t8ShCiZxrbiy7kuO06OilLI3PeL.jpg",
+                "/bPyBqGBYjGzyLVHJEIsCwlZejk.jpg",
+                "/m80kPdrmmtEh9wlLroCp0bwUGH0.jpg",
+                "/yt0CGOtKbFGR4bqLnDyB0rJeUrZ.jpg",
+                "/5wQydIQYho2wz1suPOoPoNgMzCm.jpg",
+                "/h7kaQG5MbraSLibOuTpo0gtMxRz.jpg",
+                "/9IiTNWohanK62otUDGoCvgx2mI7.jpg",
+                "/x7pOnu6IfkTFkkOguXPKK81ME4g.jpg",
+                "/438QXt1E3WJWb3PqNniK0tAE5c1.jpg",
+                "/2v6f1EqTo4FUxVT9MDXpF6158AX.jpg",
+                "/jOqxKIOC92BVyinYO1Fm73XY7Tc.jpg",
+                "/9WDk6Nu9RbeBAPutywTUa28rZej.jpg",
+                "/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg",
+                "/Aie2kiYOUgZeakpshM2N64PKof1.jpg",
         };
 
         String[] overView = {
-                "El Horror Hound festival celebra su primer evento en Luisiana, donde atrae a cientos de fanes del terror; entre ellos se encuentra Laine que, obligada a asistir por Chase, su novio, comienza a experimentar premoniciones inexplicables y visiones inquietantes relacionadas con el pasado de la ciudad y con El Creeper. A medida que avanza el festival y el entretenimiento empapado de sangre se convierte en un frenesí, Laine cree que algo sobrenatural ha sido convocado y que ella está en el centro de todo",
-                "En 1979, un grupo de jóvenes cineastas se propusieron hacer una película para adultos en la zona rural de Texas, pero cuando sus anfitriones solitarios y ancianos los atrapan en el acto, el elenco pronto se encuentra en una lucha desesperada por sus vidas.",
-                "Casi 5.000 años después de haber sido dotado de los poderes omnipotentes de los antiguos dioses -y encarcelado con la misma rapidez-, Black Adam es liberado de su tumba terrenal, listo para desatar su forma única de justicia en el mundo moderno.",
-                "Mientras trabaja a tiempo parcial como repartidor de sushi, Antoine, un joven aspirante a rapero de los suburbios de París, conoce a la Sra. Loiseau, una eminente profesora de la Ópera de París. Asombrada por el talento del joven, ella lo introduce en el mundo de la ópera y le ofrece un puesto como alumno suyo. Temiendo que no le entiendan, Antoine, lo oculta a sus amigos y familiares pero esta doble vida lo agobia... En algún lugar entre la dorada y encorsetada clase alta parisina, y los duros suburbios en los que creció, Antoine tendrá que encontrar su propia voz.",
-                "Cuatro años después de los eventos de Halloween en 2018, Laurie ha decidido liberarse del miedo y la ira y abrazar la vida. Pero cuando un joven es acusado de matar a un niño que estaba cuidando, se enciende una cascada de violencia y terror que obligará a Laurie a enfrentarse finalmente al mal que no puede controlar, de una vez por todas.",
-                "Sigue a una mujer desesperada por escapar de su pueblo, conoce a un extraño que le promete una escapada romántica, pero resulta en engaño, desconfianza y violencia.",
-                "Uta — la cantante más querida del mundo. Su voz, con la que canta mientras oculta su verdadera identidad, ha sido descrita como \"de otro mundo\". Ella aparecerá en público por primera vez en un concierto en vivo. A medida que el lugar se llena con todo tipo de fanáticos de Uta: piratas emocionados, la Armada observando de cerca y los Sombreros de Paja liderados por Luffy que simplemente vinieron a disfrutar de su actuación sonora, la voz que todo el mundo ha estado esperando está a punto de resonar. La historia comienza con el impactante hecho de que ella es la \"hija de Shanks\".",
-                "Una comedia animada llena de acción para toda la familia inspirada en el clásico atemporal de Mel Brooks 'Blazing Saddles'. Hank, un perro encantador con la cabeza llena de sueños sobre convertirse en samurái, parte en busca de su destino.",
-                "Un investigador farmacéutico amenaza con matar a los pasajeros del avión en el que viaja, lo que da paso al caos, desesperación y miedo, no solo dentro del avión, también en el planeta.",
-                "Camille y Georges bailan continuamente con su canción preferida: \"Mr. Bojangles\". Con ellos, no hay lugar más que para el placer, la fantasía y los amigos. Hasta el día en que la madre va un paso más allá, obligando a Georges y su hijo Gary a hacer lo que sea para evitar lo inevitable, cueste lo que cueste.",
-                "Alice y Jack tienen la suerte de vivir en Victoria, la ciudad experimental de la compañía que alberga a los hombres que trabajan para el Proyecto Victoria, de alto secreto, y a sus familias. La vida es perfecta, con todas las necesidades de los residentes cubiertas por la empresa. Todo lo que piden a cambio es un compromiso incondicional con la causa de Victoria. Pero cuando empiezan a aparecer grietas en su idílica vida, exponiendo destellos de algo mucho más siniestro que se esconde bajo la atractiva fachada, Alice no puede evitar cuestionarse qué están haciendo en Victoria y por qué. ¿Cuánto está dispuesta a perder Alice para sacar a la luz lo que realmente ocurre en el paraíso?",
-                "Una epopeya histórica inspirada en los hechos reales que sucedieron en el Reino de Dahomey, uno de los estados más poderosos de África en los siglos XVIII y XIX. La historia sigue a Nanisca (Davis), general de la unidad militar exclusivamente femenina y a Nawi (Mbedu), una recluta ambiciosa. Juntas lucharon contra enemigos que violaron su honor, esclavizaron a su gente y amenazaron con destruir todo por lo que habían vivido.",
-                "Young Chickenhare es el hijo adoptivo del rey Peter, un famoso aventurero. Mitad gallina y mitad liebre, le cuesta mucho crecer y se disfraza de liebre para evitar las burlas de sus compañeros. Cuando llega el día de las pruebas de la Royal Adventurer Society, Chickenhare, obstaculizado por su disfraz, fracasa miserablemente. Pero está decidido a aprovechar una segunda oportunidad y encontrar el Cetro del Hámster de la Oscuridad, antes que su malvado tío Lapin. El Cetro otorgará un inmenso poder a quien lo posea. Si Lapin se hace con él, será imparable. Acompañado por su fiel sirviente Abe, una tortuga sarcástica, y Meg, una mofeta experta en artes marciales, emprende una búsqueda épica e iniciática.",
-                "Nancy Stokes es una mujer jubilada y viuda que decide cambiar su vida para darle un poco de color. Ya supera los 60 años y está dispuesta a disfrutar de su sexualidad de manera plena. Para ello recurre a los servicios de un trabajador sexual llamado Leo Grande. Junto a él intentará experimentar una noche de placer y autodescubrimiento.",
-                "Cuando una ruptura interdimensional altera la realidad, Evelyn (Michelle Yeoh), una inmigrante china en Estados Unidos, se ve envuelta en una aventura salvaje en la que sólo ella puede salvar el mundo. Perdida en los mundos infinitos del multiverso, esta heroína inesperada debe canalizar sus nuevos poderes para luchar contra los extraños y desconcertantes peligros del multiverso mientras el destino del mundo pende de un hilo.",
-                "Siete hombres, de entre 17 y 70 años, muy distintos entre sí, aunque todos al borde de una crisis nerviosa, van a seguir una terapia de grupo en plena naturaleza. Este misterioso taller, \\\"exclusivamente reservado para hombres\\\", se supone que hace milagros. Primera sorpresa nada más llegar: ¡el animador es una mujer! Imprevisible y desconcertante, va a hacer todo lo posible para ayudarles a mejorar. Con o sin su consentimiento...",
-                "Una pareja divorciada se une y viaja a Bali para evitar que su hija cometa el mismo error que creen que cometieron hace 25 años.",
+                "For best friends Becky and Hunter, life is all about conquering fears and pushing limits. But after they climb 2,000 feet to the top of a remote, abandoned radio tower, they find themselves stranded with no way down. Now Becky and Hunter’s expert climbing skills will be put to the ultimate test as they desperately fight to survive the elements, a lack of supplies, and vertigo-inducing heights",
+                "Forced to travel with her boyfriend to a horror festival, Laine begins to experience disturbing visions associated with the urban legend of The Creeper. As the festival arrives and the blood-soaked entertainment builds to a frenzy, she becomes the center of it while something unearthly has been summoned.",
+                "In 1979, a group of young filmmakers set out to make an adult film in rural Texas, but when their reclusive, elderly hosts catch them in the act, the cast find themselves fighting for their lives.",
+                "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods and imprisoned just as quickly Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+                "A hard-on-his-luck hound finds himself in a town full of cats in need of a hero to defend them from a ruthless villain's wicked plot to wipe their village off the map. With help from a reluctant mentor, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
+                "Four years after the events of Halloween in 2018, Laurie has decided to liberate herself from fear and rage and embrace life. But when a young man is accused of killing a boy he was babysitting, it ignites a cascade of violence and terror that will force Laurie to finally confront the evil she can’t control, once and for all.",
+                "While working part-time as a food deliveryman, Antoine, an aspiring young rapper from the suburbs of Paris, meets Mrs. Loiseau, an eminent teacher at the Paris Opéra. Stunned by the young man's raw talent, she introduces him to the world of opera. As Antoine becomes one of Mrs. Loiseau's students, he hides his new dream from his friends and family, fearing that they won’t understand – this double life burdens him... Somewhere in between the gilded and uptight Parisian upper-class, and the harsh yet free-spirited and familiar suburbs he grew up in, Antoine will have to find his own voice.",
+                "Follows a woman desperate to escape her town, she meets a stranger who promises a romantic escape, but it results in deceit, mistrust, and violence.",
+                "Uta — the most beloved singer in the world. Her voice, which she sings with while concealing her true identity, has been described as “otherworldly.” She will appear in public for the first time at a live concert. As the venue fills with all kinds of Uta fans — excited pirates, the Navy watching closely, and the Straw Hats led by Luffy who simply came to enjoy her sonorous performance — the voice that the whole world has been waiting for is about to resound.",
+                "Tad would love for his archeologist colleagues to accept him as one of their own, but he always messes everything up. Tad accidentally destroys a sarcophagus and unleashes an ancient spell endangering the lives of his friends: Mummy, Jeff and Belzoni. With everyone against him and only helped by Sara, he sets off on an adventure that will take him from Mexico to Chicago and from Paris to Egypt, in order to put an end to the curse of the Mummy.",
+                "Nancy Stokes doesn’t know good sex. Whatever it may be, Nancy, a retired schoolteacher, is pretty sure she has never had it, but she is determined to finally do something about that. She even has a plan: It involves an anonymous hotel room, and a young sex worker who calls himself Leo Grande.",
+                "While investigating a terroristic threat that goes viral online, Korean authorities discover that a suspect has recently boarded an international flight bound for the United States. When a healthy passenger on the same flight suddenly dies a gruesome death of unknown cause, panic erupts both in-flight and on the ground. With steadily decreasing fuel and international refusals to offer aid, the captain and crew will be forced to take unprecedented emergency measures in an attempt to save the lives of their passengers.",
+                "Seven men, all city-dwellers aged between 17 and 70, with nothing in common apart from the fact that they are all on the verge of a nervous breakdown, meet up at a lonely sta- tion for an unusual course in the wild that is supposed to get them back on their feet. Each step in this boot camp, designed by an eccentric and feisty female coach, aims to reveal them to themselves. The task seems to be a tough one, especially as nothing goes as planned between these men.",
+                "In front of their little boy, Camille and Georges dance on their favorite song \"Mr Bojangles\". With them, there is only place for fun and fantasy. The one who shows the way is the mother, an unpredictable wisp. She leads them into a whirlwind of poetry so that the party continues again and again, no matter what happens. Mad love has never lived up to its name so well.",
+                "The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.",
+                "Young Chickenhare is the adopted son of King Peter, a famous adventurer. Part chicken and part hare, he has a really tough time growing up and disguises himself as a hare to avoid the mockeries of his peers. When the day of the Royal Adventurer Society trials comes, Chickenhare, hampered by his disguise, fails miserably. But he is determined to grab a second chance and find the Scepter of the Hamster of Darkness, before his evil Uncle Lapin. The Scepter will give immense power to its holder. If Lapin gets hold of it, he will be unstoppable. Accompanied by his faithful servant Abe, a sarcastic turtle, and Meg, a martial arts expert skunk, he sets of on an epic and initiatory quest.",
+                "Alice and Jack are lucky to be living in the idealized community of Victory, the experimental company town housing the men who work for the top-secret Victory Project and their families. But when cracks in their idyllic life begin to appear, exposing flashes of something much more sinister lurking beneath the attractive façade, Alice can’t help questioning exactly what they’re doing in Victory, and why.",
+                "In town for a job interview, a young woman arrives at her Airbnb late at night only to find that it has been mistakenly double-booked and a strange man is already staying there. Against her better judgement, she decides to stay the night anyway, but soon discovers that there is much more to be afraid of in the house than the other guest.",
+                "An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes.",
+                "A struggling actor seems doomed to live life as a loser. When he finally snatches a lead role as a superhero named “Badman,” he feels like everything is possible, but fate strikes again.",
         };
+        String[] backDrop = {
+                "/hT3OqvzMqCQuJsUjZnQwA5NuxgK.jpg",
+                "/tIX6j3NzadlwGcJ52nuWdmtOQkg.jpg",
+                "/21ldFAokKVjwzi1SHXoPb5gc7md.jpg",
+                "/grATqZhXqK9wN7nH0BzjVIgatZD.jpg",
+                "/92PJmMopfy64VYjd0HvIQaHGZX0.jpg",
+                "/pvlRjQHd9IlZ2ZyyH0SlW8eZsLE.jpg",
+                "/7IW5xt241RUAufYiFBoAPx5n52V.jpg",
+                "/7YI3LxKLTxHjes9OaBUYrKdXqh3.jpg",
+                "/54PmeEzQMvpojpJBku61ZGQnWUX.jpg",
+                "/piEEg5kDQyxK05V4Am8sVxFe267.jpg",
+                "/fILWktCfh0ZiKWjWwyXalWzSvKX.jpg",
+                "/fI8hv1IqWUIUjx4YRfl6TWhdqHW.jpg",
+                "/b6FPcYuYNwK63b0i2NhTZN5Iimi.jpg",
+                "/jD3et0aL3yDDZZ6R9I4DzyjyofW.jpg",
+                "/gkseI3CUfQtMKX41XD4AxDzhQb7.jpg",
+                "/sahdgvn0Brw6AgdwyLHgdCAynWG.jpg",
+                "/4O9kFXsBjlxtgzXWHfgMS9CjhbN.jpg",
+                "/7ydeRa5w6o7fLdGKP79ek5VJdlS.jpg",
+                "/tt79dbOPd9Z9ykEOpvckttgYXwH.jpg",
+                "/rfbpgHbotsnB4sopZDIA3EhPecQ.jpg",
+        };
+        String path = "https://image.tmdb.org/t/p/original/";
         for (int i = 0; i < titles.length; i++) {
-            listUpcoming.add(new ListElement(titles[i], rating[i], releaseDate[i], "https://image.tmdb.org/t/p/original/" + imagePath[i]));
+            listUpcoming.add(new ListElement(titles[i], rating[i], releaseDate[i], path + imagePath[i], overView[i], path + backDrop[i]));
         }
     }
 }
