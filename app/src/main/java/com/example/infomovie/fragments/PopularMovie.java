@@ -6,11 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.infomovie.DetailsScreen;
 import com.example.infomovie.R;
 import com.example.infomovie.adapter.ListAdapter;
 import com.example.infomovie.model.ListElement;
+import com.example.infomovie.model.Results;
+import com.example.infomovie.services.RetrofitClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,9 @@ import java.util.List;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class PopularMovie extends Fragment {
@@ -52,6 +58,7 @@ public class PopularMovie extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        getSuperHeroes();
     }
 
     @Override
@@ -218,6 +225,28 @@ public class PopularMovie extends Fragment {
         for (int i = 0; i < titles.length; i++) {
             element.add(new ListElement(titles[i], rating[i], releaseDate[i], path + imagePath[i], overView[i], path + backDrop[i]));
         }
+    }
+    private void getSuperHeroes() {
+        Call<List<Results>> call = RetrofitClient.getInstance().getMyApi().getsuperHeroes();
+        call.enqueue(new Callback<List<Results>>() {
+            private Call<List<Results>> call;
+            private Response<List<Results>> response;
+
+            @Override
+            public void onResponse(Call<List<Results>> call, Response<List<Results>> response) {
+              List<Results> myheroList = response.body();
+                String[] oneHeroes = new String[myheroList.size()];
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Results>> call, Throwable t) {
+                Toast.makeText(getContext(), "An error has occured", Toast.LENGTH_LONG).show();
+            }
+
+        });
     }
 }
 

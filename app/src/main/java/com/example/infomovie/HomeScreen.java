@@ -28,6 +28,7 @@ public class HomeScreen extends FragmentActivity  {
         pagerAdapter = new ScreenSlidePagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);
 
+
     }
 
     @Override
