@@ -71,7 +71,7 @@
 
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="1dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
                     android:text="Release Date:"
@@ -96,9 +96,9 @@
 
                 <TextView
                     android:id="@+id/textView7"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+
                     android:text="Rating:"
                     android:textSize="20sp"
                     android:textStyle="bold" />

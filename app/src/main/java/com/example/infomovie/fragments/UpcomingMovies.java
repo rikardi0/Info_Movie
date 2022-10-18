@@ -207,7 +207,7 @@ public class UpcomingMovies extends Fragment {
         };
         String path = "https://image.tmdb.org/t/p/original/";
         for (int i = 0; i < titles.length; i++) {
-            listUpcoming.add(new ListElement(titles[i], rating[i], releaseDate[i], path + imagePath[i], overView[i], path + backDrop[i]));
+            listUpcoming.add(new ListElement(path + backDrop[i],overView[i], path + imagePath[i], releaseDate[i], titles[i], rating[i] ));
         }
     }
 }

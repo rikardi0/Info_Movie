@@ -205,7 +205,7 @@ public class NowPlaying extends Fragment {
         };
         String path = "https://image.tmdb.org/t/p/original/";
         for (int i = 0; i < titles.length; i++) {
-            listMovie.add(new ListElement(titles[i], rating[i], releaseDate[i], path + imagePath[i], overView[i], path + backDrop[i]));
+            listMovie.add(new ListElement(path + backDrop[i],overView[i], path + imagePath[i], releaseDate[i], titles[i], rating[i] ));
         }
 
     }
